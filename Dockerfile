@@ -12,11 +12,6 @@ USER forwarder
 
 ADD fetchmail.rc /home/forwarder/fetchmail.rc
 ADD msmtp.rc /home/forwarder/msmtp.rc
+ADD run.sh /run.sh
 
-RUN envsubst < ~/fetchmail.rc > ~/.fetchmailrc
-RUN envsubst < ~/msmtp.rc > ~/.msmtprc
-
-RUN chmod 0400 ~/.fetchmailrc
-RUN chmod 0400 ~/.msmtprc
-
-ENTRYPOINT fetchmail -v -N
+CMD ["/run.sh"]
