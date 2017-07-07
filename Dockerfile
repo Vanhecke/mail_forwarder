@@ -2,7 +2,7 @@ FROM alpine:3.6
 
 MAINTAINER Joris Vanhecke <joris@jorisvanhecke.be>
 
-# Need G_USERNAME, G_PASSWORD, DROPBOX_EMAIL, LABELFOLDER variables!
+# Need G_USERNAME, G_PASSWORD, G_FROM DROPBOX_EMAIL, LABELFOLDER variables!
 
 RUN apk add --no-cache fetchmail msmtp gettext ca-certificates
 RUN update-ca-certificates
@@ -19,4 +19,4 @@ RUN envsubst < ~/msmtp.rc > ~/.msmtprc
 RUN chmod 0400 ~/.fetchmailrc
 RUN chmod 0400 ~/.msmtprc
 
-RUN fetchmail -v -N
+ENTRYPOINT fetchmail -v -N

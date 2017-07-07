@@ -5,6 +5,6 @@ tls on
 tls_trust_file /etc/ssl/cert.pem
 logfile ~/.msmtp.log
 auth on
-from ${G_USERNAME}
+from ${G_FROM}
 user ${G_USERNAME}
 password ${G_PASSWORD}
