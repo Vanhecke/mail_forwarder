@@ -2,7 +2,7 @@ account default
 host smtp.gmail.com
 port 587
 tls on
-tls_trust_file /etc/ssl/cert.pem
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
 logfile ~/.msmtp.log
 auth on
 from ${G_FROM}
