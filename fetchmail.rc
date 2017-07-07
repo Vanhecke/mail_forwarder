@@ -1,0 +1,10 @@
+poll imap.gmail.com protocol IMAP
+	user "${G_USERNAME}" is ${G_USERNAME} here
+	password "${G_PASSWORD}"
+	folder '${LABELFOLDER}'
+	mda "/usr/local/bin/msmtp -- ${DROPBOX_EMAIL}"
+	fetchall
+	options
+	no keep
+	ssl
+	set daemon 30
