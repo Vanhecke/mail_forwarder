@@ -1,4 +1,4 @@
-count default
+account default
 host smtp.gmail.com
 port 587
 tls on
